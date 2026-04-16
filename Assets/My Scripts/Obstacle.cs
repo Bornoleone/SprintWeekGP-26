@@ -11,7 +11,6 @@ public class Obstacle
     
     public Obstacle(string name, Vector3 spawnLocation)
     {
-
         LoadAssets();
         obstaclePrefab = GetPrefabFromName(name);
         SpawnObstacle(spawnLocation);
@@ -26,8 +25,12 @@ public class Obstacle
     {
         foreach (GameObject prefab in obstaclePrefabs)
         {
-            Debug.Log("Prefab "+prefab.name + " Loaded to array");
-            if (prefab.name == name) obstacleName = name; return prefab;
+            Debug.Log("Prefab " + prefab.name + " Loaded");
+            if (prefab.name == name) 
+            {
+                obstacleName = name;
+                return prefab;
+            }   
         }
         return null;
     }
