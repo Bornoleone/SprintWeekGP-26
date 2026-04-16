@@ -11,6 +11,7 @@ public class Obstacle
     
     public Obstacle(string name, Vector3 spawnLocation)
     {
+
         LoadAssets();
         obstaclePrefab = GetPrefabFromName(name);
         SpawnObstacle(spawnLocation);
@@ -19,14 +20,14 @@ public class Obstacle
     {
         obstaclePrefabs = Resources.LoadAll<GameObject>("Obstacles");
         if (obstaclePrefabs.Length == 0) { Debug.Log("Resources folder missing prefabs"); }
-        if (obstaclePrefabs.Length > 0) { Debug.Log("Resources Load Successfully"); }
+        if (obstaclePrefabs.Length > 0) { Debug.Log("Resources Loaded Successfully"); }
     }
     protected GameObject GetPrefabFromName(string name)
     {
         foreach (GameObject prefab in obstaclePrefabs)
         {
-            Debug.Log(prefab.name);
-            if (prefab.name == name) return prefab;
+            Debug.Log("Prefab "+prefab.name + " Loaded to array");
+            if (prefab.name == name) obstacleName = name; return prefab;
         }
         return null;
     }
