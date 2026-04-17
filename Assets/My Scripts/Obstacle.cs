@@ -38,6 +38,6 @@ public class Obstacle
     {
         obstaclePosition = spawnLocation;
         obstacleRotation = Quaternion.identity;
-        Object.Instantiate(obstaclePrefab, obstaclePosition, obstacleRotation);
+        GameObject newObstacle = Object.Instantiate(obstaclePrefab, obstaclePosition, obstacleRotation);
     }
 }

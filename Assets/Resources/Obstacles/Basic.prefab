@@ -45,9 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df68a09b80e0dd94a9f9103b33ada73f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleParenting
-  OnDeath:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!65 &4700068850666420560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84,7 +81,7 @@ GameObject:
   - component: {fileID: 4578583119402324559}
   m_Layer: 0
   m_Name: Basic
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

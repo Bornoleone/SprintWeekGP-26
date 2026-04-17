@@ -4,8 +4,11 @@ using UnityEngine.Events;
 
 public class ObstacleParenting : MonoBehaviour
 {
-    public UnityEvent OnDeath;
-    
+
+    private void Start()
+    {
+        
+    }
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Platform"))
@@ -15,7 +18,9 @@ public class ObstacleParenting : MonoBehaviour
         }
         if (collision.CompareTag("Player"))
         {
-            OnDeath.Invoke();
+            Debug.Log("Player hit Obstacle");
+            ScoreManager.instance.OnDeath();
+
         }
     }
     
