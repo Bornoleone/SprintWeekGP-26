@@ -10,7 +10,7 @@ namespace AH3520
         {
             if (other.gameObject.CompareTag("Trigger"))
             {
-                Instantiate(road, new Vector3(-7, 0, 0), Quaternion.identity); 
+                Instantiate(road, new Vector3(-15, 0, 0), Quaternion.identity); 
             }
         }
     }
