@@ -28,4 +28,5 @@ void Update() {
 
     controller.Move(move * Time.deltaTime);
     }
+    public void Restart() { transform.position = new Vector3(0, 1.33f ,0); }
 }

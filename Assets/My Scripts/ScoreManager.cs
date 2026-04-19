@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class ScoreManager : MonoBehaviour
 {
     public UnityEvent OnDeathEvent;
-    [SerializeField] private float previousScore;
+    [SerializeField] public float previousScore;
     [SerializeField] private float currentScore;
     [SerializeField] public float highScore;
     [SerializeField] public bool gameOnGoing;
@@ -63,6 +63,6 @@ public class ScoreManager : MonoBehaviour
     }
     private void SpawnStartPlatform()
     {
-        Instantiate(platform, new Vector3(0, -1, -18), Quaternion.identity);
+        Instantiate(platform, new Vector3(0, 0, -18), Quaternion.identity);
     }
 }

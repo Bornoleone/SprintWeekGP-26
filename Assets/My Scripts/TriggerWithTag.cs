@@ -5,14 +5,17 @@ namespace AH3520
     public class TriggerWithTag : MonoBehaviour
     {
         public GameObject road;
-
+        private bool switchBool = true;
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Player"))
+            if (other.gameObject.CompareTag("Player") && switchBool)
             {
+                switchBool = false;
                 Debug.Log("Triggered");
-                Instantiate(road, new Vector3(0, 0, 18), Quaternion.identity); 
+                Instantiate(road, new Vector3(0, 0, 18), Quaternion.identity);
             }
         }
+        
+
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class DeathMenu : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textMeshProUGUI;
+    [SerializeField] private TextMeshProUGUI textMeshProUGUIscore;
     public UnityEvent startEvent;
     void Start()
     {
@@ -22,8 +23,13 @@ public class DeathMenu : MonoBehaviour
     }
     public void UpdateHighscore()
     {
-        float score = ScoreManager.instance.highScore;
-        textMeshProUGUI.text = "Highscore is "+ score.ToString();
+        float highscore = ScoreManager.instance.highScore;
+        textMeshProUGUI.text = "Highscore is "+ highscore.ToString();
+    }
+    public void UpdateScore()
+    {
+        float score = ScoreManager.instance.previousScore;
+        textMeshProUGUIscore.text = "YOUR SCORE IS " + score.ToString() + " !!!";
     }
 
 }
