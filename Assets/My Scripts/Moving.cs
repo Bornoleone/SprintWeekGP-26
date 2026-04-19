@@ -6,7 +6,7 @@ namespace AH3520
     {
         void Update()
         {
-            transform.position += new Vector3(4, 0, 0) * Time.deltaTime;
+            transform.position += new Vector3(0, 0, -4) * Time.deltaTime;
         }
 
         private void OnTriggerEnter(Collider other)

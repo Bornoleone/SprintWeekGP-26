@@ -1,10 +1,12 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class DeathMenu : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textMeshProUGUI;
+    public UnityEvent startEvent;
     void Start()
     {
         
@@ -13,6 +15,10 @@ public class DeathMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            startEvent.Invoke();
+        }
     }
     public void UpdateHighscore()
     {

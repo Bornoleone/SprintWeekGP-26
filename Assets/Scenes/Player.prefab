@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7911084430330111793}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,9 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55fdef8f119be062ab4efb31d0814380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  speed: 6
-  jumpSpeed: 8
-  gravity: 0
+  speed: 10
   camera: {fileID: 1326555078001021946}
   lookSpeed: 0
   lookXLimit: 45

@@ -10,10 +10,16 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] public float highScore;
     [SerializeField] public bool gameOnGoing;
     [SerializeField] private TextMeshProUGUI textMeshProUGUI;
+    [SerializeField] private GameObject platform;
     public static ScoreManager instance;
+
     void Awake()
     {
         instance = this;
+    }
+    private void Start()
+    {
+        //RestartRun();
     }
 
     void Update()
@@ -26,9 +32,9 @@ public class ScoreManager : MonoBehaviour
     public void RestartRun()
     {
         Debug.Log("Run Started");
+        SpawnStartPlatform();
         RestartTimer();
         gameOnGoing = true;
-        //Time.timeScale = 1f;
     }
     public void OnDeath()
     {
@@ -54,5 +60,9 @@ public class ScoreManager : MonoBehaviour
     private void RunEnded()
     {
         gameOnGoing = false;
+    }
+    private void SpawnStartPlatform()
+    {
+        Instantiate(platform, new Vector3(0, -1, -18), Quaternion.identity);
     }
 }

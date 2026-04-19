@@ -14,7 +14,7 @@ public class ObstacleParenting : MonoBehaviour
         if (collision.CompareTag("Platform"))
         {
             transform.parent.SetParent(collision.transform, true);
-            Debug.Log("This Obstacle is Child of The Platform Now!");
+            //Debug.Log("This Obstacle is Child of The Platform Now!");
         }
         if (collision.CompareTag("Player"))
         {

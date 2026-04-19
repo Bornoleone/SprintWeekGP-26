@@ -8,9 +8,10 @@ namespace AH3520
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Trigger"))
+            if (other.gameObject.CompareTag("Player"))
             {
-                Instantiate(road, new Vector3(-15, 0, 0), Quaternion.identity); 
+                Debug.Log("Triggered");
+                Instantiate(road, new Vector3(0, 0, 18), Quaternion.identity); 
             }
         }
     }

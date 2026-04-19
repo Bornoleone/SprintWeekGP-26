@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Xml.Linq;
 using Unity.Mathematics;
 using UnityEngine;
@@ -11,6 +13,12 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] private Vector3[] spawnPositions2;
     [SerializeField] private Vector3[] spawnPositions3;
     [SerializeField] private string obstaclePrefabName = "Basic";//Prefab's name from Assets/Resource/Obstacles
+    public static ObstacleSpawner instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    
     void Update()
     {
         /*if(Input.GetKeyDown(KeyCode.Space))//for testing input key
@@ -21,11 +29,13 @@ public class ObstacleSpawner : MonoBehaviour
     public void SpawnObstacles()//called from platform spawning Unity Event
     {
         Vector3[] VectorArray = GetRandomObstacleArray();
+        Debug.Log("array length" + VectorArray.Length);
         for (int i = 0; i < VectorArray.Length; i++)
         {
             Obstacle obstacle = new Obstacle(obstaclePrefabName, VectorArray[i]);
            
         }
+        VectorArray = null;
     }
     public void DestroyAllObstacles()
     {
@@ -34,19 +44,25 @@ public class ObstacleSpawner : MonoBehaviour
         {
                 Destroy(obstacle);
         }
-        
+        GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
+        foreach (GameObject platform in platforms)
+        {
+            Destroy(platform);
+        }
+
     }
     private Vector3[] GetRandomObstacleArray()
     {
-        Vector3[] randomArray;
+        
         int rand = Random.Range(1, 4);
         switch(rand)
         {
-            case 1: randomArray = spawnPositions;Debug.Log("Random array is spawnPositions"); break;
-            case 2: randomArray = spawnPositions2; Debug.Log("Random array is spawnPositions2"); break;
-            case 3: randomArray = spawnPositions3; Debug.Log("Random array is spawnPositions3"); break;
-            default: randomArray = spawnPositions; Debug.Log("Random array is spawnPositions"); break;
+            case 1: return spawnPositions;Debug.Log("Random array is spawnPositions"); break;
+            case 2: return spawnPositions2; Debug.Log("Random array is spawnPositions2"); break;
+            case 3: return spawnPositions3; Debug.Log("Random array is spawnPositions3"); break;
+            default:  Debug.Log("Default case"); break;
         }
-        return randomArray;
+        return null;
     }
+    
 }

@@ -18,14 +18,14 @@ public class Obstacle
     private void LoadAssets()
     {
         obstaclePrefabs = Resources.LoadAll<GameObject>("Obstacles");
-        if (obstaclePrefabs.Length == 0) { Debug.Log("Resources folder missing prefabs"); }
-        if (obstaclePrefabs.Length > 0) { Debug.Log("Resources Loaded Successfully"); }
+        //if (obstaclePrefabs.Length == 0) { Debug.Log("Resources folder missing prefabs"); }
+        //if (obstaclePrefabs.Length > 0) { Debug.Log("Resources Loaded Successfully"); }
     }
     protected GameObject GetPrefabFromName(string name)
     {
         foreach (GameObject prefab in obstaclePrefabs)
         {
-            Debug.Log("Prefab " + prefab.name + " Loaded");
+            //Debug.Log("Prefab " + prefab.name + " Loaded");
             if (prefab.name == name) 
             {
                 obstacleName = name;
